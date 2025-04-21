@@ -25,5 +25,8 @@ debug-test:
 	mkdir -p output/bin
 	$(CC) $(CFLAGS) -g $(TEST_SRC) $(SRC_NOMAIN) -o $(TEST_TARGET) -lcunit
 
+run-test: debug-test
+	./$(TEST_TARGET)
+
 clean:
 	rm -f $(TARGET) $(TEST_TARGET)
